@@ -1,3 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/* Seletores de Classe */
+.caixa {
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+    padding: 1rem;
+    background-color: #ddd;
+    color: #000;
+}
+aside {
+    width: 20em;
+    text-align: center;
+}
+main img {
+    /* você provavelmente terá outras declarações css aqui */
+    float: right;
+}
+aside h2 {
+    position: absolute;
+    top: 47px;
+    left: 150px;
+}
 nav {
     background-color: darkblue;
     padding: 10px;
