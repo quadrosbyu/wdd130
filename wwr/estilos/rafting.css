@@ -30,7 +30,10 @@ h1, h2 {
 }
 nav, p, section, article {
     margin: 16px;
-    padding: 8px;
+    padding: 8px;    
+}
+.socialmedia a, nav a, footer a {
+    text-decoration: none;
 }
 .redes-sociais a {
     text-decoration: none;
