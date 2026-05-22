@@ -35,9 +35,7 @@ nav, p, section, article {
 .socialmedia a, nav a, footer a {
     text-decoration: none;
 }
-.hero article {
-    position: absolute;
-}
+
 .hero {
     position: relative;
 }
