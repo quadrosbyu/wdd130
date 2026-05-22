@@ -36,7 +36,6 @@ nav, p, section, article {
     text-decoration: none;
 }
 
-./* 1. O contêiner pai com posicionamento relativo */
 .hero {
     position: relative;
 }
