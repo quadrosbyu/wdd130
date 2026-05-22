@@ -46,6 +46,9 @@ nav, p, section, article {
     width: 100%;
     height: auto;
 }
+.hero h1, .hero article {
+    position: absolute;
+}
 h1 {
     position: absolute;
     top: 20px;
