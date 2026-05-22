@@ -40,16 +40,6 @@ nav, p, section, article {
 .hero {
     position: relative;
 }
-
-/* 2. O título em posicionamento absoluto */
-.hero h1 {
-    position: absolute;
-}
-
-/* 3. O artigo em posicionamento absoluto (A REGRA QUE ESTÁ FALTANDO) */
-.hero article {
-    position: absolute;
-}
  
 .hero img {
     display: block;
