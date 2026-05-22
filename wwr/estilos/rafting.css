@@ -41,6 +41,11 @@ nav, p, section, article {
 .hero {
     position: relative;
 }
+.hero h1, 
+.hero article {
+    position: absolute;
+    z-index: 2; /* Garante que fiquem acima da imagem */
+}
 .hero img {
     display: block;
     width: 100%;
