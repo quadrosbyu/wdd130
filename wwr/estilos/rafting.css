@@ -56,6 +56,9 @@ h1 {
     background-color: var(--cor-destaque1);
     color: #fff; /* texto branco - certifique-se de que haja contraste suficiente com a cor de fundo */
 }
+.hero article {
+    position: absolute;
+}
 .hero article img {
     float: right;
     width: 125px;
