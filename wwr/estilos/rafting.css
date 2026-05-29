@@ -1,3 +1,16 @@
+/* ==========================================================================
+   0. VARIÁVEIS DE CORES (:ROOT)
+   ========================================================================== */
+:root {
+    --cor-primaria: #0b2545;       /* Azul escuro (Cabeçalho/Rodapé) */
+    --cor-secundaria: #134074;     /* Azul intermediário (Links/Detalhes) */
+    --cor-fundo-página: #f7f9fa;   /* Cinza claro para o fundo do site */
+    --cor-fundo-card: #ffffff;     /* Branco para blocos de conteúdo */
+    --cor-fundo-aside: #eef4f8;    /* Azul bem claro para a seção de redes */
+    --cor-texto-escuro: #333333;   /* Cor principal do texto */
+    --cor-texto-suave: #4a5568;    /* Cor para parágrafos longos */
+    --cor-clara: #ffffff;          /* Branco para textos sobre fundos escuros */
+}
 /*1. CONFIGURAÇÕES GERAIS E RESETS
    ========================================================================== */
 * {
@@ -62,7 +75,7 @@ img {
    3. SEÇÃO HERO & ARTIGO PRINCIPAL
    ========================================================================== */
 .hero {
-    position: relative;
+    position:relative;
     text-align: center;
     background-color: #ffffff;
     padding-bottom: 3rem;
@@ -94,7 +107,7 @@ img {
     background: #ffffff;
     padding: 2.5rem;
     border-radius: 8px;
-    position:absolute;
+    position:relative;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
