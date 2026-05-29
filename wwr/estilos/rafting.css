@@ -1,118 +1,239 @@
-:root {
-    --cor-primaria: #055a05; /* verde-floresta */
-    --cor-secundaria: #f4a261; /* bege médio */
-    --cor-destaque1: #264653; /* azul-escuro acinzentado */
-    --cor-destaque2: #e9c46a; /* amarelo-claro dourado */
-    --fonte-titulo: "Times New Roman", "Georgia", "serif";
-    --fonte-body: "Arial", "Helvetica", "sans-serif";
-}
-header {
-    background-color: var(--cor-primaria);
-    color: var(--cor-destaque2);
-}
+/* 1. RESET DE ESTILOS & CONFIGURAÇÕES GERAIS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    font-family: var(--fonte-body);
-    color: var(--cor-destaque1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f4f7f6;
 }
-header, main, footer {
-    width: 840px;
+
+/* Links globais */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 2. HEADER E NAVEGAÇÃO */
+.main-header {
+    background-color: #0b2545;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-header img {
+    height: 50px; /* Ajuste conforme o tamanho do seu logotipo */
+    width: auto;
+}
+
+.main-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-header nav a {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.main-header nav a:hover {
+    color: #139a8c; /* Cor verde-água para destaque */
+    border-bottom: 2px solid #139a8c;
+}
+
+/* 3. ESTRUTURA DO CONTEÚDO PRINCIPAL (MAIN) */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Seção Hero (Destaque Inicial) */
+.hero {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.hero > img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #0b2545;
+    margin: 25px 0 15px 0;
+}
+
+/* Artigo interno da seção Hero */
+.hero article {
+    padding: 0 30px 40px 30px;
+    max-width: 800px;
     margin: 0 auto;
 }
-h1, h2 {
-    font-family: var(--fonte-titulo);
-    color: var(--cor-secundaria);
-    text-align: center;
-}
-nav, p, section, article {
-    margin: 16px;
-    padding: 8px;    
-}
-.redes-sociais a, nav a, footer a {
-    text-decoration: none;
+
+.hero article h2 {
+    font-size: 1.8rem;
+    color: #134074;
+    margin-bottom: 20px;
 }
 
-.hero {
-    position: relative;
-}
- 
-.hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    opacity: 0.7;
-    background-color: var(--cor-destaque1);
-    color: #fff; /* texto branco - certifique-se de que haja contraste suficiente com a cor de fundo */
-}
-.hero article {
-    position: absolute;
-}
 .hero article img {
-    float: right;
-    width: 125px;
-    }
-    header, footer {
-        max-width: 840px;
-        margin: 0 auto;
-    }
-    nav {
-        background-color: steelblue;
-        padding: 1rem;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    nav a {
-        display: block;
-        padding: 0.5rem;
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: #fff; /* abreviação para branco */
-    }
-    header, footer, .grid {
-
-    }
-    .grid {
-        display: grid;
-        align-items: center;
-    }
-    main {
-        grid-column: 2/3;
-        margin: 1rem;
-    }
-    aside {
-        width: 20rem;
-        position: relative;
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-    /* CSS Grid no cabeçalho para o layout horizontal */
-.main-header {
-  display: grid;
-  grid-template-columns: auto 1fr; /* Logo com tamanho próprio, nav ocupa o resto */
-  align-items: center;            /* Alinha logo e nav verticalmente ao centro */
-  padding: 10px 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-height: 300px;
 }
-/* CSS Flex na lista do nav para o layout horizontal dos links */
-.nav-bar ul {
-  display: flex;             /* Ativa o Flexbox nos links */
-  flex-direction: row;       /* Alinha os itens em linha (horizontal) */
-  justify-content: flex-end; /* Empurra os links para o lado direito */
-  gap: 20px;                 /* Cria o espaçamento entre os links */
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+.hero article p {
+    font-size: 1.1rem;
+    color: #555555;
+    text-align: justify;
+}
+
+/* Seção de História */
+main section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+main section h2 {
+    font-size: 2rem;
+    color: #0b2545;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+main section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #139a8c;
+    border-radius: 2px;
+}
+
+/* Galeria de Fotos em Grid */
+section:last-of-type {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Título que fica fora do comportamento do Grid nas seções */
+section:last-of-type h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+}
+
+figure {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+figure:hover {
+    transform: translateY(-5px); /* Efeito flutuante ao passar o mouse */
+}
+
+figure img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+figcaption {
+    padding: 15px;
+    font-weight: 600;
+    color: #134074;
+    text-align: center;
+}
+
+/* 4. BARRA LATERAL (ASIDE) & REDES SOCIAIS */
+aside {
+    background-color: #eef4f8;
+    padding: 25px;
+    text-align: center;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-sociais a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease;
+}
+
+.redes-sociais a img:hover {
+    transform: scale(1.15);
+}
+
+/* 5. RODAPÉ (FOOTER) */
+footer {
+    background-color: #0b2545;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* 6. RESPONSIVIDADE (PARA DISPOSITIVOS MÓVEIS) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .main-header nav ul {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero article h2 {
+        font-size: 1.5rem;
+    }
 }
