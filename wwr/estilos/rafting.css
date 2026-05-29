@@ -77,6 +77,7 @@ main {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 40px;
     text-align: center;
+    position: relative;
 }
 
 .hero > img {
@@ -89,6 +90,7 @@ main {
     font-size: 2.5rem;
     color: #0b2545;
     margin: 25px 0 15px 0;
+    position: absolute;
 }
 
 /* Artigo interno da seção Hero */
@@ -96,6 +98,7 @@ main {
     padding: 0 30px 40px 30px;
     max-width: 800px;
     margin: 0 auto;
+    position: absolute;
 }
 
 .hero article h2 {
