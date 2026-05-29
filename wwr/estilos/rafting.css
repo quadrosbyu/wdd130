@@ -192,7 +192,7 @@ aside {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--cor-destaque1);
+    background-color:var(--cor-secundaria);
     color: #fff;
     margin-top: 20px;
 }
