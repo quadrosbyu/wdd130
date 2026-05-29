@@ -45,7 +45,7 @@ main {
 /* 4. HEADER E NAVEGAÇÃO */
 .main-header {
     background-color: var(--cor-primaria);
-    color: #ffffff;
+    color:var(--cor-destaque2);
     display: flex;
     justify-content: space-between;
     align-items: center;
