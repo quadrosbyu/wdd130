@@ -240,3 +240,33 @@ footer {
         font-size: 1.5rem;
     }
 }
+:root {
+    --cor-primaria: #055a05; /* verde-floresta */
+    --cor-secundaria: #f4a261; /* bege médio */
+    --cor-destaque1: #264653; /* azul-escuro acinzentado */
+    --cor-destaque2: #e9c46a; /* amarelo-claro dourado */
+    --fonte-titulo: "Times New Roman", "Georgia", "serif";
+    --fonte-body: "Arial", "Helvetica", "sans-serif";
+}
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-destaque2);
+}
+body {
+    font-family: var(--fonte-body);
+    color: var(--cor-destaque1);
+}
+h1, h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-secundaria);
+    text-align: center;
+}
+h1 {
+    background-color: var(--cor-destaque1);
+    color: #fff; /* texto branco - certifique-se de que haja contraste suficiente com a cor de fundo */
+
+}
+nav a {
+    color: #fff; /* abreviação para branco */
+
+}
