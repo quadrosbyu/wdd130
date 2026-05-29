@@ -99,3 +99,26 @@ h1 {
         grid-column: 1/2;
         grid-row: 1/2;
     }
+    /* Regra combinada para limitar a largura e centralizar os blocos na tela */
+.main-header, 
+main, 
+.main-footer {
+  max-width: 840px;   /* Define a largura máxima solicitada */
+  margin: 0 auto;     /* Centraliza o bloco horizontalmente na página */
+  width: 100%;        /* Garante que ocupe toda a largura em telas menores que 840px */
+  box-sizing: border-box; /* Evita que o padding aumente o tamanho total de 840px */
+}
+
+/* Mantém o Grid do header funcionando perfeitamente dentro do limite */
+.main-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Estilização básica do footer (exemplo) */
+.main-footer {
+  padding: 20px;
+  text-align: center;
+}
