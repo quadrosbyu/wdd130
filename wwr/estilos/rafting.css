@@ -106,6 +106,7 @@ h2::after {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 3rem;
+    position: relative;
 }
 
 .hero > img {
@@ -121,6 +122,7 @@ h2::after {
     margin: 2rem 0;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: absolute;
 }
 
 /* Artigo sobre o Objetivo */
@@ -132,6 +134,7 @@ h2::after {
     align-items: center;
     background-color: #f7f9f7;
     border-top: 3px solid var(--cor-secundaria);
+    position: absolute;
 }
 
 .hero article h2 {
