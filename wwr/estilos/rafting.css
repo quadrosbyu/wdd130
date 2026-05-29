@@ -99,26 +99,20 @@ h1 {
         grid-column: 1/2;
         grid-row: 1/2;
     }
-    /* Regra combinada para limitar a largura e centralizar os blocos na tela */
-.main-header, 
-main, 
-.main-footer {
-  max-width: 840px;   /* Define a largura máxima solicitada */
-  margin: 0 auto;     /* Centraliza o bloco horizontalmente na página */
-  width: 100%;        /* Garante que ocupe toda a largura em telas menores que 840px */
-  box-sizing: border-box; /* Evita que o padding aumente o tamanho total de 840px */
-}
-
-/* Mantém o Grid do header funcionando perfeitamente dentro do limite */
+    /* CSS Grid no cabeçalho para o layout horizontal */
 .main-header {
   display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
+  grid-template-columns: auto 1fr; /* Logo com tamanho próprio, nav ocupa o resto */
+  align-items: center;            /* Alinha logo e nav verticalmente ao centro */
   padding: 10px 20px;
 }
-
-/* Estilização básica do footer (exemplo) */
-.main-footer {
-  padding: 20px;
-  text-align: center;
+/* CSS Flex na lista do nav para o layout horizontal dos links */
+.nav-bar ul {
+  display: flex;             /* Ativa o Flexbox nos links */
+  flex-direction: row;       /* Alinha os itens em linha (horizontal) */
+  justify-content: flex-end; /* Empurra os links para o lado direito */
+  gap: 20px;                 /* Cria o espaçamento entre os links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
