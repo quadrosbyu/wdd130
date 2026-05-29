@@ -1,18 +1,15 @@
 /* ==========================================================================
-   0. VARIÁVEIS DE CORES (:ROOT)
+   1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
    ========================================================================== */
 :root {
-    --cor-primaria: #0b2545;       /* Azul escuro (Cabeçalho/Rodapé) */
-    --cor-secundaria: #134074;     /* Azul intermediário (Links/Detalhes) */
-    --cor-fundo-página: #f7f9fa;   /* Cinza claro para o fundo do site */
-    --cor-fundo-card: #ffffff;     /* Branco para blocos de conteúdo */
-    --cor-fundo-aside: #eef4f8;    /* Azul bem claro para a seção de redes */
-    --cor-texto-escuro: #333333;   /* Cor principal do texto */
-    --cor-texto-suave: #4a5568;    /* Cor para parágrafos longos */
-    --cor-clara: #ffffff;          /* Branco para textos sobre fundos escuros */
+    --cor-primaria: #055a05; /* verde-floresta */
+    --cor-secundaria: #f4a261; /* bege médio */
+    --cor-destaque1: #264653; /* azul-escuro acinzentado */
+    --cor-destaque2: #e9c46a; /* amarelo-claro dourado */
+    --fonte-titulo: "Times New Roman", "Georgia", "serif";
+    --fonte-body: "Arial", "Helvetica", "sans-serif";
 }
-/*1. CONFIGURAÇÕES GERAIS E RESETS
-   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -20,170 +17,181 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333333;
-    background-color: #f7f9fa;
+    font-family: var(--fonte-body);
+    color: var(--cor-destaque1);
+    background-color: #fcfcfc;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* Limitador de largura para alinhar o layout */
+.main-header, main, footer {
+    max-width: 840px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* ==========================================================================
-   2. CABEÇALHO E NAVEGAÇÃO
+   2. CABEÇALHO E NAVEGAÇÃO (GRID + FLEXBOX)
    ========================================================================== */
 .main-header {
-    background-color: #0b2545;
-    padding: 1rem 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr; /* Logo tamanho próprio, nav ocupa o resto */
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    background-color: var(--cor-primaria);
 }
 
 .main-header img {
-    max-height: 60px;
+    max-height: 60px; /* Evita que o logo quebre o cabeçalho */
+    width: auto;
 }
 
-.main-header nav ul {
-    list-style: none;
+/* Alinhamento do menu utilizando a tag nav direto do HTML */
+.main-header nav {
     display: flex;
-    gap: 1.5rem;
+    justify-content: flex-end;
 }
 
-.main-header nav a {
-    color: #ffffff;
+.main-header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-header a {
+    display: block;
+    padding: 0.5rem;
     text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    transition: color 0.3s;
 }
 
-.main-header nav a:hover {
-    color: #134074;
+.main-header a:hover {
+    color: var(--cor-destaque2);
 }
 
 /* ==========================================================================
-   3. SEÇÃO HERO & ARTIGO PRINCIPAL
+   3. SECTION HERO (IMAGEM DE DESTAQUE E TITULO)
    ========================================================================== */
 .hero {
-    position:relative;
-    text-align: center;
-    background-color: #ffffff;
-    padding-bottom: 3rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
-
+ 
 .hero > img {
+    display: block;
     width: 100%;
-    max-height: 450px;
-    object-fit: cover;
-    filter: brightness(70%);
+    height: auto;
 }
 
-.hero h1 {
+h1 {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #ffffff;
-    font-size: 3rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    width: 90%;
-}
-
-.hero article {
-    max-width: 800px;
-    margin: -50px auto 0 auto;
-    background: #ffffff;
-    padding: 2.5rem;
+    width: 80%;
+    padding: 16px;
+    text-align: center;
+    background-color: rgba(38, 70, 83, 0.8); /* Fundo com opacidade sem afetar o texto */
+    color: #fff;
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
     border-radius: 8px;
-    position:relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.hero article h2 {
-    color: #0b2545;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+/* Ajuste para o artigo que estava "sumido" por conta do position absolute */
+.hero article {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .hero article img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 1.5rem;
-}
-
-.hero article p {
-    text-align: justify;
-    font-size: 1.1rem;
-    color: #4a5568;
+    float: right;
+    width: 125px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
 }
 
 /* ==========================================================================
-   4. SEÇÕES DE CONTEÚDO (HISTÓRIA E AVENTURA)
+   4. CONTEÚDO GERAL E SEÇÕES
    ========================================================================== */
-main section {
-    max-width: 1100px;
-    margin: 0 auto 3rem auto;
-    padding: 0 1.5rem;
+h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
 }
 
-main section h2 {
-    color: #0b2545;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 3px solid #134074;
-    padding-bottom: 0.5rem;
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-/* Container de figuras estilo Grid */
-main section:last-of-type {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+section {
+    padding: 20px 10px;
 }
 
-main section:last-of-type h2 {
-    grid-column: 1 / -1;
-}
-
-figure {
-    background: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-figure:hover {
-    transform: translateY(-5px);
-}
-
-figure img {
+/* Organização das imagens da galeria de aventuras */
+section figure {
+    display: inline-block;
     width: 100%;
-    height: 220px;
+    max-width: 250px;
+    margin: 10px;
+    vertical-align: top;
+    text-align: center;
+}
+
+section figure img {
+    width: 100%;
+    height: 160px;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 figcaption {
-    padding: 1rem;
-    text-align: center;
-    font-weight: 600;
-    color: #134074;
-    background-color: #ffffff;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #666;
 }
 
 /* ==========================================================================
-   5. LATERAIS, REDES SOCIAIS E RODAPÉ
+   5. RODAPÉ E REDES SOCIAIS
+   ========================================================================== */
+aside {
+    max-width: 840px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.redes-sociais img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s;
+}
+
+.redes-sociais img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor-destaque1);
+    color: #fff;
+    margin-top: 20px;
+}
