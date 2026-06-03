@@ -172,19 +172,19 @@ aside {
     text-align: center;
 }
 
-.redes-sociais {
+.socialmedia {
     display: flex;
     justify-content: center;
     gap: 15px;
 }
 
-.redes-sociais img {
+.socialmedia img {
     width: 40px;
     height: 40px;
     transition: transform 0.2s;
 }
 
-.redes-sociais img:hover {
+.socialmedia img:hover {
     transform: scale(1.1);
 }
 
