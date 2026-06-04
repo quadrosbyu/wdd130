@@ -174,8 +174,10 @@ aside {
 
 .socialmedia {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 15px;
+    list-style: none;
+    padding: 0%;
 }
 
 .socialmedia img {
