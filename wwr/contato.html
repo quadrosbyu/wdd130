@@ -4,116 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | Rafting Aventuras</title>
+    <title>Fale Conosco | Companhia de Rafting em Corredeiras</title>
     <meta name="description"
-        content="Entre em contato com a Rafting Aventuras. Envie suas dúvidas sobre reservas, localização ou sugestões através do nosso formulário ou canais de atendimento.">
+        content="Entre em contato com a Companhia de Rafting em Corredeiras. Envie uma mensagem ou localize nossa base em Foz do Iguaçu.">
     <link rel="stylesheet" href="rafting.css">
 </head>
 
 <body>
 
-    <!-- Cabeçalho e Navegação (Manter igual às outras páginas) -->
+    <!-- Cabeçalho Principal -->
     <header class="main-header">
-        <div class="logo">Rafting Aventuras</div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="contato.html" class="active">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="logo-box">
+                <!-- Ícone/Logo do Wireframe -->
+                <div class="placeholder-icon">🏞️</div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="viagens.html">Viagens</a></li>
+                    <li><a href="contato.html" class="active">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Conteúdo Principal -->
-    <main class="contact-container">
-        <h1>Fale Conosco</h1>
+    <main class="content-wrapper">
 
-        <!-- Seção 1: Informações e Mapa -->
-        <section class="contact-info-section">
-            <div class="info-details">
-                <h2>Nossa Base</h2>
-                <p><strong>Endereço:</strong> Av. das Corredeiras, 1500 - Brotas/SP</p>
-                <p><strong>Telefone:</strong> (14) 3653-1234 / (14) 99999-5678</p>
-                <p><strong>E-mail:</strong> contato@raftingaventuras.com.br</p>
-            </div>
-            <div class="info-map">
-                <!-- Iframe sem o atributo style="border:0" inline -->
-                <iframe src="https://google.com" width="100%" height="300" allowfullscreen="" loading="lazy"
+        <!-- Título e Informações da Empresa -->
+        <section class="company-heading">
+            <h1>Companhia de Rafting em Corredeiras</h1>
+            <address class="company-address">
+                123 Rua Principal do Rio<br>
+                Foz do Iguaçu, Paraná<br>
+                <a href="tel:+5545999999999">+55 45 99999-9999</a><br>
+                <a href="mailto:info@correiras.com">info@correiras.com</a>
+            </address>
+        </section>
+
+        <!-- Seção Central: Mapa e Formulário lado a lado -->
+        <section class="interactive-section">
+
+            <!-- Bloco do Mapa (Esquerda) -->
+            <div class="map-container">
+                <!-- Iframe do Google Maps sem style="border:0" inline -->
+                <iframe src="https://google.com" width="100%" height="100%" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-        </section>
 
-        <!-- Seção 2: Formulário de Contato -->
-        <section class="contact-form-section">
-            <h2>Envie uma Mensagem</h2>
-            <form action="#" method="POST" class="styled-form">
+            <!-- Bloco do Formulário (Direita) -->
+            <div class="form-container">
+                <form action="#" method="POST" class="contact-form">
 
-                <div class="form-group">
-                    <label for="username">Nome:</label>
-                    <input type="text" id="username" name="username" required placeholder="Digite seu nome completo">
-                </div>
-
-                <div class="form-group">
-                    <label for="useremail">E-mail:</label>
-                    <input type="email" id="useremail" name="useremail" required placeholder="seuemail@exemplo.com">
-                </div>
-
-                <div class="form-group-radio">
-                    <label>Finalidade da Mensagem:</label>
-                    <div class="radio-options">
-                        <label><input type="radio" name="purpose" value="geral" checked> Consulta Geral</label>
-                        <label><input type="radio" name="purpose" value="reserva"> Pergunta sobre Reserva</label>
-                        <label><input type="radio" name="purpose" value="sugestao"> Sugestão de Site</label>
+                    <div class="form-row">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" placeholder="Digite aqui" required>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="message">Mensagem:</label>
-                    <textarea id="message" name="message" rows="5" required
-                        placeholder="Escreva sua mensagem aqui..."></textarea>
-                </div>
+                    <div class="form-row">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Digite aqui" required>
+                    </div>
 
-                <div class="form-group-checkbox">
-                    <label><input type="checkbox" name="newsletter" value="sim"> Quero receber a newsletter
-                        mensal</label>
-                </div>
+                    <div class="form-row-radio">
+                        <span class="radio-title">Propósito da Mensagem</span>
+                        <div class="radio-group">
+                            <label><input type="radio" name="purpose" value="geral" checked> Dúvida Geral</label>
+                            <label><input type="radio" name="purpose" value="reserva"> Pergunta sobre Reserva</label>
+                            <label><input type="radio" name="purpose" value="sugestao"> Sugestão</label>
+                        </div>
+                    </div>
 
-                <button type="submit" class="btn-submit">Enviar Mensagem de Contato</button>
-            </form>
-        </section>
+                    <div class="form-row-textarea">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Digite aqui" required></textarea>
+                    </div>
 
-        <!-- Seção 3: Equipe -->
-        <section class="team-section">
-            <h2>Nossa Equipe de Especialistas</h2>
-            <div class="team-grid">
-                <figure class="team-member">
-                    <img src="images/guia1.jpg" alt="Foto do Carlos, Guia Master">
-                    <figcaption>
-                        <h3>Carlos Silva</h3>
-                        <p>Guia Master de Rafting</p>
-                    </figcaption>
-                </figure>
-                <figure class="team-member">
-                    <img src="images/guia2.jpg" alt="Foto da Mariana, Instrutora de Segurança">
-                    <figcaption>
-                        <h3>Mariana Costa</h3>
-                        <p>Instrutora de Segurança</p>
-                    </figcaption>
-                </figure>
-                <figure class="team-member">
-                    <img src="images/guia3.jpg" alt="Foto do Ricardo, Coordenador de Expedições">
-                    <figcaption>
-                        <h3>Ricardo Santos</h3>
-                        <p>Coordenador de Expedições</p>
-                    </figcaption>
-                </figure>
+                    <div class="form-row-checkbox">
+                        <label>
+                            <input type="checkbox" name="newsletter" value="sim"> Por favor, me inscreva na newsletter
+                            mensal
+                        </label>
+                    </div>
+
+                    <div class="form-row-submit">
+                        <button type="submit" class="submit-btn">Entrar em Contato!</button>
+                    </div>
+
+                </form>
             </div>
         </section>
+
+        <!-- Seção da Equipe (Inferior) -->
+        <section class="team-section">
+            <h2>Estamos Aqui para Servi-lo</h2>
+            <div class="team-grid">
+
+                <figure class="team-card">
+                    <div class="avatar-placeholder">👤</div>
+                    <figcaption>Perfil do Funcionário</figcaption>
+                </figure>
+
+                <figure class="team-card">
+                    <div class="avatar-placeholder">👤</div>
+                    <figcaption>Perfil do Funcionário</figcaption>
+                </figure>
+
+                <figure class="team-card">
+                    <div class="avatar-placeholder">👤</div>
+                    <figcaption>Perfil do Funcionário</figcaption>
+                </figure>
+
+            </div>
+        </section>
+
     </main>
 
-    <!-- Rodapé (Manter igual às outras páginas) -->
+    <!-- Rodapé -->
     <footer class="main-footer">
-        <p>&copy; 2026 Rafting Aventuras. Todos os direitos reservados.</p>
+        <div class="footer-container">
+            <div class="footer-text">
+                Conteúdo do Rodapé incluindo Ícones/Links de Mídia Social
+            </div>
+            <div class="footer-social-icons">
+                <a href="#" class="social-box">✖</a>
+                <a href="#" class="social-box">✖</a>
+                <a href="#" class="social-box">✖</a>
+            </div>
+        </div>
     </footer>
 
 </body>
