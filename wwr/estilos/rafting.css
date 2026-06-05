@@ -197,3 +197,9 @@ footer {
     color: black;
     margin-top: 20px;
 }
+/* A remoção e personalização da borda são controladas exclusivamente por aqui */
+.info-map iframe {
+    border: none; /* Substitui o antigo border:0 inline */
+    border-radius: 8px; /* Adiciona cantos arredondados modernos */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Aplica uma sombra suave para dar profundidade */
+}

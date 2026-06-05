@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Rafting Aventuras</title>
+    <meta name="description"
+        content="Entre em contato com a Rafting Aventuras. Envie suas dúvidas sobre reservas, localização ou sugestões através do nosso formulário ou canais de atendimento.">
+    <link rel="stylesheet" href="rafting.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho e Navegação (Manter igual às outras páginas) -->
+    <header class="main-header">
+        <div class="logo">Rafting Aventuras</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="contact-container">
+        <h1>Fale Conosco</h1>
+
+        <!-- Seção 1: Informações e Mapa -->
+        <section class="contact-info-section">
+            <div class="info-details">
+                <h2>Nossa Base</h2>
+                <p><strong>Endereço:</strong> Av. das Corredeiras, 1500 - Brotas/SP</p>
+                <p><strong>Telefone:</strong> (14) 3653-1234 / (14) 99999-5678</p>
+                <p><strong>E-mail:</strong> contato@raftingaventuras.com.br</p>
+            </div>
+            <div class="info-map">
+                <!-- Iframe sem o atributo style="border:0" inline -->
+                <iframe src="https://google.com" width="100%" height="300" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Seção 2: Formulário de Contato -->
+        <section class="contact-form-section">
+            <h2>Envie uma Mensagem</h2>
+            <form action="#" method="POST" class="styled-form">
+
+                <div class="form-group">
+                    <label for="username">Nome:</label>
+                    <input type="text" id="username" name="username" required placeholder="Digite seu nome completo">
+                </div>
+
+                <div class="form-group">
+                    <label for="useremail">E-mail:</label>
+                    <input type="email" id="useremail" name="useremail" required placeholder="seuemail@exemplo.com">
+                </div>
+
+                <div class="form-group-radio">
+                    <label>Finalidade da Mensagem:</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="purpose" value="geral" checked> Consulta Geral</label>
+                        <label><input type="radio" name="purpose" value="reserva"> Pergunta sobre Reserva</label>
+                        <label><input type="radio" name="purpose" value="sugestao"> Sugestão de Site</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="5" required
+                        placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+
+                <div class="form-group-checkbox">
+                    <label><input type="checkbox" name="newsletter" value="sim"> Quero receber a newsletter
+                        mensal</label>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Mensagem de Contato</button>
+            </form>
+        </section>
+
+        <!-- Seção 3: Equipe -->
+        <section class="team-section">
+            <h2>Nossa Equipe de Especialistas</h2>
+            <div class="team-grid">
+                <figure class="team-member">
+                    <img src="images/guia1.jpg" alt="Foto do Carlos, Guia Master">
+                    <figcaption>
+                        <h3>Carlos Silva</h3>
+                        <p>Guia Master de Rafting</p>
+                    </figcaption>
+                </figure>
+                <figure class="team-member">
+                    <img src="images/guia2.jpg" alt="Foto da Mariana, Instrutora de Segurança">
+                    <figcaption>
+                        <h3>Mariana Costa</h3>
+                        <p>Instrutora de Segurança</p>
+                    </figcaption>
+                </figure>
+                <figure class="team-member">
+                    <img src="images/guia3.jpg" alt="Foto do Ricardo, Coordenador de Expedições">
+                    <figcaption>
+                        <h3>Ricardo Santos</h3>
+                        <p>Coordenador de Expedições</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé (Manter igual às outras páginas) -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Rafting Aventuras. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
