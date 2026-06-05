@@ -5,138 +5,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fale Conosco | Companhia de Rafting em Corredeiras</title>
-    <meta name="description"
-        content="Entre em contato com a Companhia de Rafting em Corredeiras. Envie uma mensagem ou localize nossa base em Foz do Iguaçu.">
-    <link rel="stylesheet" href="rafting2.css">
+    <link rel="stylesheet" href="rafting.css">
 </head>
 
 <body>
 
-    <!-- Cabeçalho Principal -->
-    <header class="main-header">
-        <div class="logo">
-            <!-- Representação do ícone de imagem no Wireframe -->
-            <img src="imagens/z-splash.png" alt="Logotipo da Empresa">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="passeios.html">Viagens</a></li>
-                <li><a href="contato.html">Fale Conosco</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="wireframe-canvas">
 
-    <!-- Conteúdo Principal -->
-    <main>
+        <!-- Cabeçalho Principal -->
+        <header class="main-header">
+            <div class="logo-placeholder">
+                <span class="image-icon">⛰️</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="passeios.html">Viagens</a></li>
+                    <li><a href="contato.html">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <!-- Seção de Cabeçalho de Contato -->
-        <section class="contact-intro">
-            <h1>Companhia de Rafting em Corredeiras</h1>
-            <address>
+        <!-- Conteúdo Principal -->
+        <main>
+            <!-- Bloco de Informações de Contato -->
+            <section class="contact-info">
+                <h1>Companhia de Rafting em Corredeiras</h1>
                 <p>123 Rua Principal do Rio</p>
                 <p>Foz do Iguaçu, Paraná</p>
-                <p><a href="tel:+5545999999999">+55 45 99999-9999</a></p>
-                <p><a href="mailto:info@correiras.com">info@correiras.com</a></p>
-            </address>
-        </section>
+                <p>+55 45 99999-9999</p>
+                <p>info@correiras.com</p>
+            </section>
 
-        <!-- Seção Interativa (Mapa e Formulário) -->
-        <section class="contact-container">
-
-            <!-- Bloco do Mapa -->
-            <div class="map-box">
-                <!-- Substituir o src pela URL real do mapa do Google Maps se necessário -->
-                <iframe src="https://google.com..." width="100%" height="450" style="border:0;" allowfullscreen=""
-                    loading="lazy" title="Localização da Empresa"></iframe>
-            </div>
-
-            <!-- Formulário de Contato -->
-            <form action="#" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite aqui" required>
+            <!-- Seção Central: Mapa + Formulário -->
+            <section class="content-split">
+                <!-- Placeholder do Mapa -->
+                <div class="map-placeholder">
+                    <span class="map-pin">📍</span>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Digite aqui" required>
+                <!-- Formulário de Contato -->
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-row">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite aqui">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Digite aqui">
+                    </div>
+
+                    <div class="radio-group">
+                        <p class="radio-title">Propósito da Mensagem</p>
+                        <label><input type="radio" name="proposito" checked> <span>Dúvida Geral</span></label>
+                        <label><input type="radio" name="proposito"> <span>Pergunta sobre Reserva</span></label>
+                        <label><input type="radio" name="proposito"> <span>Sugestão</span></label>
+                    </div>
+
+                    <div class="form-block">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Digite aqui" rows="4"></textarea>
+                    </div>
+
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="newsletter">
+                        <label for="newsletter">Por favor, me inscreva na newsletter mensal</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Entrar em Contato!</button>
+                </form>
+            </section>
+
+            <!-- Seção de Equipe -->
+            <section class="team-section">
+                <h2>Estamos Aqui para Servi-lo</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">👤</div>
+                        <p>Perfil do Funcionário</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">👤</div>
+                        <p>Perfil do Funcionário</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">👤</div>
+                        <p>Perfil do Funcionário</p>
+                    </div>
                 </div>
+            </section>
+        </main>
 
-                <fieldset class="form-group">
-                    <legend>Propósito da Mensagem</legend>
-
-                    <label class="radio-label">
-                        <input type="radio" name="proposito" value="geral" checked> Dúvida Geral
-                    </label>
-
-                    <label class="radio-label">
-                        <input type="radio" name="proposito" value="reserva"> Pergunta sobre Reserva
-                    </label>
-
-                    <label class="radio-label">
-                        <input type="radio" name="proposito" value="sugestao"> Sugestão
-                    </label>
-                </fieldset>
-
-                <div class="form-group">
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite aqui" required></textarea>
-                </div>
-
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="newsletter" name="newsletter">
-                    <label for="newsletter">Por favor, me inscreva na newsletter mensal</label>
-                </div>
-
-                <button type="submit">Entrar em Contato!</button>
-            </form>
-
-        </section>
-
-        <!-- Seção de Perfis dos Funcionários -->
-        <section class="team-section">
-            <h2>Estamos Aqui para Servi-lo</h2>
-            <div class="team-grid">
-
-                <div class="team-member">
-                    <img src="imagens/funcionario1.png" alt="Foto do Funcionário 1">
-                    <p>Perfil do Funcionário</p>
-                </div>
-
-                <div class="team-member">
-                    <img src="imagens/funcionario2.png" alt="Foto do Funcionário 2">
-                    <p>Perfil do Funcionário</p>
-                </div>
-
-                <div class="team-member">
-                    <img src="imagens/funcionario3.png" alt="Foto do Funcionário 3">
-                    <p>Perfil do Funcionário</p>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Rodapé -->
-    <footer>
-        <div class="footer-content">
-            <p>Conteúdo do Rodapé incluindo Ícones/Links de Mídia Social</p>
+        <!-- Rodapé -->
+        <footer>
             <nav class="socialmedia">
-                <a href="https://facebook.com" target="_blank" rel="noopener"><img src="imagens/facebook.png"
-                        alt="Ícone do Facebook"></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener"><img src="imagens/linkedin.png"
-                        alt="Ícone do Linkedin"></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener"><img src="imagens/instagram.jpg"
-                        alt="Ícone do Instagram"></a>
+                <a href="https://facebook.com"><img src="imagens/facebook.png" alt="Ícone do Facebook"></a>
+                <a href="https://linkedin.com"><img src="imagens/linkedin.png" alt="Ícone do Linkedin"></a>
+                <a href="https://instagram.com"><img src="imagens/instagram.jpg" alt="Ícone do Instagram"></a>
             </nav>
-        </div>
-        <div class="footer-credits">
             <p>&copy; 2026 Rafting Corredeiras | Marcelo Quadros</p>
-        </div>
-    </footer>
+
+        </footer>
+
+
+    </div>
 
 </body>
 
