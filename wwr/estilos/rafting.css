@@ -4,14 +4,10 @@
 :root {
     --cor-primaria: #055a05; /* verde-floresta */
     --cor-secundaria: #f4a261; /* bege médio */
-    --cor-destaque1: #264653; /* azul-escuro acinzetado */
+    --cor-destaque1: #264653; /* azul-escuro acinzentado */
     --cor-destaque2: #e9c46a; /* amarelo-claro dourado */
     --fonte-titulo: "Times New Roman", "Georgia", "serif";
     --fonte-body: "Arial", "Helvetica", "sans-serif";
-    
-    /* Variáveis adicionadas do Wireframe */
-    --purple-bg: #e1d5f5; /* Tom de roxo claro do wireframe */
-    --border-color: #4a4a4a;
 }
 
 * {
@@ -24,332 +20,181 @@ body {
     font-family: var(--fonte-body);
     color: var(--cor-destaque1);
     background-color: #fcfcfc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    }
 
-/* Limitador de largura unificado para alinhar o layout */
-.main-header, .content-wrapper, footer {
-    max-width: 1000px; /* Ajustado para acomodar o mapa e form lado a lado */
+/* Limitador de largura para alinhar o layout */
+.main-header, main, footer {
+    max-width: 840px;
     margin: 0 auto;
     width: 100%;
 }
 
 /* ==========================================================================
-   2. CABEÇALHO E NAVEGAÇÃO (ESTILIZADO IGUAL AO WIREFRAME)
+   2. CABEÇALHO E NAVEGAÇÃO (GRID + FLEXBOX)
    ========================================================================== */
 .main-header {
-    background-color: var(--purple-bg);
-    border: 2px solid var(--border-color);
-    margin-top: 15px;
-    padding: 15px 30px;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr; /* Logo tamanho próprio, nav ocupa o resto */
     align-items: center;
-}
-
-.logo-box .placeholder-icon {
-    font-size: 2.5rem;
-    background: #c8b6e9;
     padding: 10px 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    background-color: var(--cor-primaria);
 }
 
-.main-nav ul {
+.main-header img {
+    max-height: 60px; /* Evita que o logo quebre o cabeçalho */
+    width: auto;
+}
+
+/* Alinhamento do menu utilizando a tag nav direto do HTML */
+.main-header nav {
     display: flex;
+    justify-content: flex-end;
+}
+
+.main-header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
     list-style: none;
-    gap: 15px;
     margin: 0;
     padding: 0;
 }
 
-.main-nav a {
+.main-header a {
     display: block;
+    padding: 0.5rem;
     text-decoration: none;
-    color: #000000;
-    background-color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid var(--border-color);
-    font-weight: bold;
-    font-size: 0.95rem;
-    transition: background-color 0.2s;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: crimson;
+    transition: color 0.3s;
 }
 
-.main-nav a.active, .main-nav a:hover {
-    background-color: #f0f0f0;
-    box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
-    color: #000000; /* Sobrescreve o crimson anterior se necessário */
+.main-header a:hover {
+    color: var(--cor-destaque2);
 }
 
 /* ==========================================================================
-   3. CONTEÚDO GERAL E SEÇÕES
+   3. SECTION HERO (IMAGEM DE DESTAQUE E TITULO)
    ========================================================================== */
-.content-wrapper {
+.hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+ 
+.hero h1 {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 16px;
+    text-align: center;
+    background-color: rgba(38, 70, 83, 0.8); /* Fundo com opacidade sem afetar o texto */
+    color: #fff;
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
+    border-radius: 8px;
+}
+.hero > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Ajuste para o artigo que estava "sumido" por conta do position absolute */
+.hero article {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    position:absolute;
+}
+
+.hero article img {
+    float: right;
+    width: 125px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   4. CONTEÚDO GERAL E SEÇÕES
+   ========================================================================== */
+h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+section {
     padding: 20px 10px;
 }
 
-/* Título e Endereço da Empresa */
-.company-heading {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.company-heading h1 {
-    font-family: var(--fonte-titulo);
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--cor-destaque1);
-    margin-bottom: 10px;
-}
-
-.company-address {
-    font-style: normal;
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
-.company-address a {
-    color: var(--cor-destaque1);
-    text-decoration: none;
-}
-
-/* ==========================================================================
-   4. SEÇÃO INTERATIVA (MAPA + FORMULÁRIO DO WIREFRAME)
-   ========================================================================== */
-.interactive-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 40px;
-    align-items: start;
-}
-
-/* Bloco do Mapa */
-.map-container {
-    border: 2px solid var(--border-color);
-    background-color: #f5f5f5;
-    height: 400px;
-    overflow: hidden;
-}
-
-.map-container iframe {
+/* Organização das imagens da galeria de aventuras */
+section figure {
+    display: inline-block;
     width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* Bloco do Formulário */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    align-items: center;
-}
-
-.form-row label, .form-row-textarea label {
-    font-weight: bold;
-    font-size: 0.95rem;
-}
-
-.form-row input[type="text"],
-.form-row input[type="email"],
-.form-row-textarea textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.form-row-radio {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    align-items: start;
-}
-
-.radio-title {
-    font-weight: bold;
-    font-size: 0.95rem;
-}
-
-.radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.radio-group label, .form-row-checkbox label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
-    cursor: pointer;
-}
-
-.form-row-textarea {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    align-items: start;
-}
-
-.form-row-textarea textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.form-row-checkbox {
-    margin-left: 120px;
-}
-
-.form-row-submit {
-    margin-left: 120px;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #e9e9e9;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s;
-}
-
-.submit-btn:hover {
-    background-color: #dcdcdc;
-}
-
-/* ==========================================================================
-   5. SEÇÃO DA EQUIPE (CARDS DO WIREFRAME)
-   ========================================================================== */
-.team-section {
-    border: 2px solid var(--border-color);
-    padding: 20px;
-    margin-bottom: 30px;
+    max-width: 250px;
+    margin: 10px;
+    vertical-align: top;
     text-align: center;
 }
 
-.team-section h2 {
-    font-family: var(--fonte-titulo);
-    font-size: 1.5rem;
-    color: var(--cor-primaria);
-    margin-bottom: 25px;
-}
-
-.team-grid {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.team-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: 0; /* Limpa margens herdadas */
-}
-
-.avatar-placeholder {
-    font-size: 2.5rem;
-    background-color: #f0f0f0;
-    border: 1px solid var(--border-color);
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+section figure img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
     border-radius: 4px;
 }
 
-.team-card figcaption {
+figcaption {
     font-size: 0.9rem;
-    font-weight: bold;
-    color: var(--cor-destaque1);
     margin-top: 5px;
+    color: #666;
 }
 
 /* ==========================================================================
-   6. RODAPÉ E REDES SOCIAIS (WIRE FRAME INTEGRADO)
+   5. RODAPÉ E REDES SOCIAIS
    ========================================================================== */
-.main-footer {
-    background-color: var(--purple-bg);
-    border: 2px solid var(--border-color);
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding-bottom: 15px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #000000;
+aside {
+    max-width: 840px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .socialmedia {
     display: flex;
-    gap: 10px;
-    padding: 0;
+    justify-content: flex-end;
+    gap: 15px;
     list-style: none;
+    padding: 0%;
 }
 
-.socialmedia a img {
-    width: 32px;
-    height: 32px;
-    border: 1px solid var(--border-color);
-    background-color: #ffffff;
-    padding: 2px;
-    display: block;
+.socialmedia img {
+    width: 40px;
+    height: 40px;
     transition: transform 0.2s;
 }
 
-.socialmedia a img:hover {
+.socialmedia img:hover {
     transform: scale(1.1);
 }
 
-.footer-copyright {
+footer {
     text-align: center;
-    font-size: 0.8rem;
-    color: #555555;
+    padding: 20px;
+    background-color:var(--cor-secundaria);
+    color: black;
+    margin-top: 20px;
 }
 
-/* ==========================================================================
-   7. REGRAS DE RESPONSIVIDADE
-   ========================================================================== */
-@media (max-width: 768px) {
-    .interactive-section {
-        grid-template-columns: 1fr;
-    }
-    .form-row, .form-row-textarea, .form-row-radio {
-        grid-template-columns: 1fr;
-        gap: 5px;
-    }
-    .form-row-checkbox, .form-row-submit {
-        margin-left: 0;
-    }
-    .team-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
-    }
