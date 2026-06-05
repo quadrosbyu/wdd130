@@ -1,0 +1,300 @@
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+    --cor-primaria: #055a05; /* verde-floresta */
+    --cor-secundaria: #f4a261; /* bege médio */
+    --cor-destaque1: #264653; /* azul-escuro acinzentado */
+    --cor-destaque2: #e9c46a; /* amarelo-claro dourado */
+    --fonte-titulo: "Times New Roman", "Georgia", "serif";
+    --fonte-body: "Arial", "Helvetica", "sans-serif";
+}
+
+* ==========================================================================
+   1. RESET MODERNO & CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e bordas não alterem o tamanho total */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO (HEADER) - Cores e Alinhamento do Wireframe
+   ========================================================================== */
+.main-header {
+    background-color: #d1c4e9; /* Tom lilás suave do wireframe */
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #b39ddb;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.main-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.main-header nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    background-color: #ffffff; /* Fundo branco nos botões de navegação */
+    padding: 8px 16px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.main-header nav ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL (MAIN) & INTRODUÇÃO
+   ========================================================================== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-intro h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+.contact-intro address {
+    font-style: normal;
+    font-size: 1rem;
+    color: #444444;
+}
+
+.contact-intro address a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   4. LAYOUT: MAPA + FORMULÁRIO (Lado a Lado)
+   ========================================================================== */
+.contact-container {
+    display: flex;
+    gap: 40px; /* Espaço entre o mapa e o formulário */
+    margin-bottom: 50px;
+}
+
+.map-box {
+    flex: 1; /* Ocupa metade do espaço disponível */
+    border: 2px solid #cccccc;
+    background-color: #f9f9f9;
+    min-height: 400px;
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+/* Formulário e Inputs */
+.contact-form {
+    flex: 1; /* Ocupa a outra metade do espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #555555;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Estilo para as opções de Radio e Checkbox */
+fieldset.form-group {
+    border: none;
+    padding: 0;
+}
+
+fieldset.form-group legend {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.radio-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Botão de Enviar */
+.contact-form button[type="submit"] {
+    background-color: #e0e0e0;
+    color: #000000;
+    border: 2px solid #555555;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #cccccc;
+}
+
+/* ==========================================================================
+   5. SEÇÃO DA EQUIPE (PERFIS DOS FUNCIONÁRIOS)
+   ========================================================================== */
+.team-section {
+    border-top: 2px solid #333333;
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+    flex: 1;
+    max-width: 250px;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #cccccc;
+    background-color: #eaeaea; /* Representação da imagem cinza no wireframe */
+    margin-bottom: 10px;
+    display: block;
+}
+
+.team-member p {
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   6. RODAPÉ (FOOTER) - Elementos e Ícones Sociais à Direita
+   ========================================================================== */
+footer {
+    background-color: #e8e0f5; /* Tom lilás mais claro */
+    border-top: 2px solid #b39ddb;
+    padding: 20px 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 10px;
+}
+
+.socialmedia img {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #555555;
+    background-color: #ffffff;
+    padding: 3px;
+    transition: transform 0.2s;
+}
+
+.socialmedia img:hover {
+    transform: scale(1.1);
+}
+
+.footer-credits {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666666;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 10px;
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDADE (MEDIA QUERIES) - Para Celulares
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-header, .footer-content, .contact-container, .team-grid {
+        flex-direction: column; /* Transforma linhas em colunas no celular */
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .contact-container {
+        gap: 30px;
+    }
+
+    .map-box, .contact-form {
+        width: 100%; /* Ocupa toda a largura da tela do celular */
+    }
+
