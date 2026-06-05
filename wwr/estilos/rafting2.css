@@ -10,126 +10,119 @@
     --fonte-body: "Arial", "Helvetica", "sans-serif";
 }
 
-/* ==========================================================================
-   RESET E ESTILO DE RASCUNHO (WIREFRAME STYLE)
-   ========================================================================== */
+/* Reset Geral */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #f0f0f0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-/* Container Geral para simular a folha do navegador */
-.main-container {
-    max-width: 1000px;
-    margin: 0 auto;
+/* Moldura externa imitando a proporção da folha/tela do wireframe */
+.wireframe-canvas {
+    width: 100%;
+    max-width: 960px;
+    background-color: #ffffff;
     border: 2px solid #000000;
-    background-color: #ffffff;
 }
 
-/* ==========================================================================
-   CABECALHO (HEADER) - Roxo com os Botões Retangulares Brancos
-   ========================================================================== */
+/* --- CABEÇALHO --- */
 .main-header {
-    background-color: #cca9f9; /* Roxo/Lilás idêntico ao topo do wireframe */
+    background-color: #d1bbf3; /* Cor roxa/lilás exata do topo */
     border-bottom: 2px solid #000000;
-    padding: 20px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Ícone de Imagem padrão do Wireframe */
-.logo {
-    width: 120px;
-    height: 70px;
-    border: 1px solid #777777;
+.logo-placeholder {
+    width: 130px;
+    height: 75px;
     background-color: #e0e0e0;
+    border: 1px solid #999999;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-}
-/* Desenho das montanhas/sol dentro do ícone */
-.logo::before {
-    content: "▲";
-    font-size: 30px;
-    color: #888888;
 }
 
-.main-header nav ul {
+.image-icon {
+    font-size: 32px;
+    color: #777777;
+}
+
+/* Menu de navegação grudado e retangular */
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 1px; /* Gruda um botão no outro como no desenho */
-    background-color: #000000;
     border: 2px solid #000000;
-    border-radius: 4px;
-    overflow: hidden;
 }
 
-.main-header nav ul li a {
-    text-decoration: none;
-    color: #000000;
-    background-color: #ffffff; /* Fundo branco interno dos botões */
-    padding: 10px 20px;
+.nav-links li {
+    border-right: 2px solid #000000;
+}
+
+.nav-links li:last-child {
+    border-right: none;
+}
+
+.nav-links a {
     display: block;
-    font-weight: normal;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
     font-size: 14px;
+    font-weight: bold;
 }
 
-/* ==========================================================================
-   CONTEÚDO DA PÁGINA (TEXTO CENTRAL E GRID INTERATIVO)
-   ========================================================================== */
-.contact-intro {
+/* --- CONTEÚDO PRINCIPAL --- */
+main {
+    padding: 30px 40px;
+}
+
+/* Bloco de Informações de Contato */
+.contact-info {
     text-align: center;
-    padding: 30px 20px 10px 20px;
-}
-
-.contact-intro h1 {
-    font-size: 26px;
-    font-weight: normal;
-    margin-bottom: 10px;
-}
-
-.contact-intro address {
-    font-style: normal;
-    font-size: 15px;
+    margin-bottom: 30px;
     line-height: 1.4;
 }
 
-/* MAPA + FORMULÁRIO LADO A LADO */
-.contact-container {
+.contact-info h1 {
+    font-size: 26px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+/* Layout dividido: Mapa na esquerda, Formulário na direita */
+.content-split {
     display: flex;
-    padding: 20px;
     gap: 40px;
-    align-items: flex-start;
+    margin-bottom: 40px;
 }
 
-/* Caixa do Mapa com o pin de localização */
-.map-box {
+.map-placeholder {
     flex: 1.2;
-    border: 2px solid #999999;
-    height: 320px;
-    background-color: #ededed;
-    position: relative;
-}
-/* Simulação das linhas de rua e do marcador preto no mapa do wireframe */
-.map-box::before {
-    content: "📍";
-    font-size: 30px;
-    position: absolute;
-    top: 50%;
-    left: 30%;
+    height: 340px;
+    background-color: #e8e8e8;
+    border: 1px solid #adadad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Formulário com bordas arredondadas pretas */
+.map-pin {
+    font-size: 36px;
+}
+
+/* Estrutura do Formulário */
 .contact-form {
     flex: 1;
     display: flex;
@@ -137,98 +130,112 @@ body {
     gap: 12px;
 }
 
-.form-group {
+.form-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-.form-group label {
+.form-row label {
+    width: 80px;
     font-size: 15px;
-    width: 30%;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"] {
-    width: 70%;
+.form-row input {
+    flex: 1;
     padding: 8px;
     border: 2px solid #000000;
-    border-radius: 6px; /* Bordas arredondadas suaves do wireframe */
-    background-color: #ffffff;
-    color: #a9a9a9;
+    border-radius: 6px; /* Borda arredondada suave do input */
+    font-size: 14px;
 }
 
-/* Campo Propósito com as bolinhas (Radio) */
-.fieldset-proposito {
-    border: none;
+/* Seleção de Múltipla Escolha (Radio Buttons) */
+.radio-group {
+    padding-left: 80px;
     display: flex;
     flex-direction: column;
     gap: 6px;
-    padding-left: 30%; /* Alinha com as caixas de texto */
 }
 
-.radio-label {
+.radio-title {
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.radio-group label {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
 }
 
-/* Área da Mensagem */
-.textarea-group {
+.radio-group input[type="radio"] {
+    transform: scale(1.1);
+}
+
+/* Área de Texto da Mensagem */
+.form-block {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    gap: 6px;
 }
-.textarea-group label {
-    margin-bottom: 5px;
+
+.form-block label {
+    font-size: 15px;
 }
-.contact-form textarea {
+
+.form-block textarea {
     width: 100%;
-    height: 100px;
     padding: 8px;
     border: 2px solid #000000;
     border-radius: 6px;
     resize: none;
-}
-
-/* Checkbox e Botão */
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     font-size: 14px;
 }
 
-.contact-form button[type="submit"] {
-    background-color: #e1e1e1;
+/* Checkbox */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+/* Botão de envio cinza retangular */
+.btn-submit {
+    background-color: #e0e0e0;
     border: 2px solid #000000;
     border-radius: 6px;
     padding: 10px;
     font-size: 15px;
     cursor: pointer;
     width: 100%;
+    transition: background-color 0.1s;
 }
 
-/* ==========================================================================
-   SEÇÃO DO MEIO - ESTAMOS AQUI PARA SERVI-LO
-   ========================================================================== */
+.btn-submit:hover {
+    background-color: #d0d0d0;
+}
+
+/* --- SEÇÃO EQUIPE --- */
 .team-section {
     border-top: 2px solid #000000;
-    padding: 25px 20px;
+    padding-top: 25px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .team-section h2 {
     font-size: 24px;
     font-weight: normal;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .team-grid {
     display: flex;
-    justify-content: center;
-    gap: 60px;
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .team-member {
@@ -238,64 +245,52 @@ body {
     gap: 10px;
 }
 
-/* Caixa cinza com o ícone de avatar no topo */
-.member-photo-placeholder {
+.member-photo {
     width: 140px;
-    height: 110px;
+    height: 105px;
     background-color: #dbdbdb;
-    border: 1px solid #aaaaaa;
+    border: 1px solid #b0b0b0;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-}
-.member-photo-placeholder::before {
-    content: "👤";
     font-size: 28px;
+    color: #666666;
 }
 
 .team-member p {
-    font-size: 13px;
-    text-decoration: underline;
+    font-size: 14px;
+    text-decoration: underline; /* Linhas nos links dos funcionários */
 }
 
-/* ==========================================================================
-   RODAPÉ (FOOTER) - Roxo Claro com os Três Quadrados de X à Direita
-   ========================================================================== */
-footer {
-    background-color: #e5daf7; /* Roxo mais claro do rodapé */
+/* --- RODAPÉ --- */
+.main-footer {
+    background-color: #ebdffc; /* Roxo ligeiramente mais claro */
     border-top: 2px solid #000000;
-    padding: 20px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-footer p {
+.footer-text {
     font-size: 14px;
+    max-width: 70%;
 }
 
-.socialmedia {
+.social-icons {
     display: flex;
     gap: 8px;
 }
 
-/* Quadrados com "X" simulando placeholders de redes sociais */
-.socialmedia a {
-    width: 35px;
-    height: 35px;
-    border: 2px solid #000000;
+/* Caixas com X simulando os ícones do desenho */
+.icon-box {
+    width: 36px;
+    height: 36px;
     background-color: #ffffff;
+    border: 2px solid #000000;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
     font-size: 18px;
-}
-
-/* Adiciona dinamicamente o X dentro dos blocos de rede social */
-.socialmedia a::before {
-    content: "☒";
+    font-weight: bold;
 }
