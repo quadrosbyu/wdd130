@@ -172,7 +172,7 @@ aside {
     text-align: center;
 }
 
-.socialmedia {
+.redes-sociais {
     display: flex;
     justify-content: flex-end;
     gap: 15px;
@@ -180,13 +180,13 @@ aside {
     padding: 0%;
 }
 
-.socialmedia img {
+.redes-sociais img {
     width: 40px;
     height: 40px;
     transition: transform 0.2s;
 }
 
-.socialmedia img:hover {
+.redes-sociais img:hover {
     transform: scale(1.1);
 }
 
