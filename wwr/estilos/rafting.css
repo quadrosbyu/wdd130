@@ -205,6 +205,3 @@ footer {
     border-radius: 8px; /* Opcional: deixa as bordas arredondadas */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: adiciona uma leve sombra */
 }
-iframe {
-  border: 0;
-}
